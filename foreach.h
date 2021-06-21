@@ -1,10 +1,9 @@
 #pragma once
-
-// Foreach loop in C++. The variable's type is deduced from the first element of the collection being iterated. Works only in C++ 17 and up.
+// Foreach loop in C++.
 #define foreach(item, array)                         \
-    for (int keep = 1,                               \
-             count = 0,                              \
-             size = sizeof(array) / sizeof (*array); \
-         keep && count != size;                      \
-         keep = !keep, count++)                      \
-         for (item = array[count]; keep; keep = !keep)
+    for (long long int __KEEP__ = 1,                               \
+             __COUNT__ = 0,                              \
+             __SIZE__ = sizeof(array) / sizeof(array[0]); \
+         __KEEP__ && __COUNT__ != __SIZE__;                      \
+         __KEEP__ = !__KEEP__, __COUNT__++)                      \
+        for (item = array[__COUNT__]; __KEEP__; __KEEP__ = !__KEEP__)
